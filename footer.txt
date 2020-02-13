@@ -1,0 +1,71 @@
+  <section style="background-color:chocolate;  position:fixed; bottom:0;  padding-top: 10px;  bottom:0; " class="foottom ">
+
+        <div class="footer ">
+
+            <div class="row ">
+
+                <!-- A brief Description of the web -->
+                <div class="col-md-3 ">
+
+                    <h3 style="font-weight: bold; font-size: 20px; margin-left: 60px; color: white; margin-top: 20px; ">About Meru Market Online</h3>
+
+                    <p style="color: white; margin-left: 60px; margin-top: 20px; margin-bottom: 30px; text-align: center; ">Meru Market Online was established in 2014. <br> It was created to make Trade easy.</p>
+
+
+                </div>
+
+                <!-- shortcut links  -->
+                <div class="col-md-3 ">
+
+                    <h3 style="font-weight: bold; font-size: 20px; margin-left: 60px; color: white; margin-top: 20px; ">Explore links</h3>
+                    <li style="color: white; margin-left: 60px; margin-top: 20px; list-style: none;cursor: pointer; ">Home</li>
+                    <li style="color: white; margin-left: 60px; list-style: none; cursor: pointer; ">About</li>
+                    <li style="color: white; margin-left: 60px;list-style: none; cursor: pointer;">Contact</li>
+                    <li style="color: white; margin-left: 60px;list-style: none; cursor: pointer; cursor: pointer; ">Faqs</li>
+                    <li style="color: white; margin-left: 60px; margin-bottom: 30px; list-style: none; margin-bottom: 30px; cursor: pointer; ">Terms & Conditions</li>
+
+
+                </div>
+
+
+                <!-- Social,Media  -->
+                <div class="col-md-3 ">
+
+                    <h3 style="font-weight: bold; font-size: 20px; margin-left: 30px; color: white; margin-top: 20px; ">Follow Us</h3>
+
+                    <p style="color: white; margin-left: 30px; margin-top: 20px; list-style: none; cursor: pointer; "><b><i class="fa fa-instagram " style="margin-right: 5px; "></i></b>instagram</p>
+                    <p style="color: white; margin-left: 30px; margin-top: 10px; list-style: none; cursor: pointer; "><b><i class="fa fa-twitter "style="margin-right: 5px; "></i></b>twitter</p>
+                    <p style="color: white; margin-left: 30px; margin-top: 10px; list-style: none; margin-bottom: 30px; cursor: pointer; "><b><i class="fa fa-facebook " style="margin-right: 5px; "></i></b>instagram</p>
+
+
+
+                </div>
+
+                <!-- Our contacts  -->
+                <div class="col-md-3 ">
+
+                    <h1 style="font-weight: bold; font-size: 20px; margin-left: 30px; color: white; margin-top: 20px; text-decoration: underline; ">Contact us</h1>
+
+                    <p style="color: white; margin-left: 30px; margin-top: 20px; list-style: none; cursor: pointer; "><b><i class="fa fa-phone " style="margin-right: 10px; "></i></b>+254 878909809</p>
+                    <p style="color: white; margin-left: 30px; margin-top: 20px; list-style: none; margin-bottom: 30px; cursor:pointer; "><b><i class="fa fa-envelope " style="margin-right: 10px; "></i></b>merumarket@gmail.co.ke</p>
+
+
+
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+    </section>

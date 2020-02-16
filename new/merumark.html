@@ -59,7 +59,7 @@
 
 
 
-    
+
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -68,7 +68,292 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-  
+
+
+    <style>
+        .list-group-item {
+            background-color: transparent;
+        }
+        
+        .navbar ul li a {
+            color: black;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 8px 5px;
+            padding: 7px 13px;
+        }
+        
+        a.active {
+            background: #f2f2f2;
+            color: black;
+        }
+        
+        a:hover {
+            transition: .5s;
+            background: #f2f2f2;
+            color: black;
+        }
+        
+        .has-search .form-control {
+            padding-left: 2.375rem;
+            border-radius: 2.0vw;
+        }
+        
+        .has-search .form-control-feedback {
+            position: absolute;
+            z-index: 2;
+            display: block;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 1.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #aaa;
+        }
+        
+        .collapse-content .fa.fa-heart:hover {
+            color: #f44336 !important;
+        }
+        
+        #carouselmain img {
+            width: 100%;
+        }
+        
+        .collapse-content .fa.fa-share-alt:hover {
+            color: #0d47a1 !important;
+        }
+        
+        .text {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+        
+        .center {
+            margin: auto;
+            width: 50%;
+            padding: 0.5vw;
+        }
+        
+        .cat-btn {
+            font-size: 14px;
+        }
+        
+        .content {
+            max-width: 100%;
+            margin: auto;
+        }
+        /* categories*/
+        
+        .activate {
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+        
+        .activate:hover {
+            background-color: #b5651d;
+            width: 100%;
+            border-radius: 2px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .btn-group {
+            max-width: 90%!important;
+            position: relative!important;
+            left: 50%!important;
+            margin-left: -480px!important;
+            line-height: 1.4em!important;
+        }
+        
+        .btn-primary,
+        .btn-primary:hover {
+            background-color: #fff!important;
+            color: black !important;
+            padding-right: 10px!important;
+            position: relative!important;
+        }
+        
+        .side-menu {
+            width: 15%;
+            height: 400px;
+            font-size: 15;
+            float: left;
+            margin-left: 5px;
+            z-index: 2;
+            background-color: white;
+            border: 1px solid #888888;
+            box-shadow: 1px 1px 2px 1px;
+        }
+        
+        .slider {
+            width: 60%;
+            margin-left: 16%;
+            padding: 0 10px;
+            height: 400px;
+        }
+        
+        .featuredCategories {
+            margin: 50px 0;
+        }
+        
+        .featuredCategories img {
+            width: 100%;
+            padding: 20px 0;
+            transition: 1s;
+            cursor: pointer;
+        }
+        
+        .featuredCategories .items :hover img {
+            transform: scale(1.1);
+            box-shadow: 1px 1px 4px 1px gray;
+        }
+        
+        .title {
+            background-color: chocolate;
+            width: 280px;
+            color: white;
+            padding: 4px 10px;
+            height: 40px;
+            margin-bottom: 30px;
+            display: flex;
+        }
+        
+        .title h2 {
+            font-size: 24px;
+        }
+        
+        .featuredCategories .btn-secondary {
+            opacity: 0;
+        }
+        
+        .featuredCategories :hover .btn-secondary {
+            opacity: 1;
+        }
+        
+        .product-rating .fa {
+            color: chocolate;
+        }
+        
+        .topproducts:hover {
+            border: 1px solid chocolate;
+            box-shadow: 1px 1px 4px 1px chocolate;
+            transition: 1s;
+        }
+        
+        .topproducts {
+            margin-top: 40px;
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 40px;
+            width: 260px;
+        }
+        
+        .topproducts img {
+            width: 250px;
+            background-color: #808080;
+        }
+        
+        .overlayright {
+            display: block;
+            margin-left: 0;
+            top: 10%;
+            opacity: 0;
+            position: absolute;
+            width: 70px;
+        }
+        
+        .overlayright .fa {
+            cursor: pointer;
+            background-color: #fff;
+            color: black;
+            height: 35px;
+            width: 35px;
+            font-size: 20px;
+            padding: 7px;
+            margin-bottom: 5%;
+            margin-top: 5%;
+        }
+        
+        .overlayright .btn-secondary {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+        
+        .topproducts:hover .overlayright {
+            opacity: 1;
+            margin-left: 5%;
+            transition: 1s;
+        }
+        
+        .Searchbox {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .sidemenu {
+            margin-top: 30px;
+        }
+        
+        .side-menu ul li {
+            list-style-type: none;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        
+        .side-menu ul li ul {
+            display: none;
+            z-index: 10;
+            top: 190px;
+        }
+        
+        .side-menu ul li ul :hover {
+            color: chocolate;
+        }
+        
+        .side-menu ul li:hover ul {
+            display: block;
+            height: 400px;
+            width: 60%;
+            margin-left: 13%;
+            position: fixed;
+            box-shadow: 1px 1px 4px 1px #dcdcdc;
+            padding: 0 100px 10px 10px;
+            background-color: white;
+        }
+        
+        .title1 {
+            background-color: green;
+            width: 280px;
+            color: white;
+            padding: 4px 10px;
+            height: 40px;
+            margin-bottom: 30px;
+            display: flex;
+        }
+        
+        .title1 h2 {
+            font-size: 24px;
+        }
+        
+        .log ul li {
+            list-style: none;
+            float: right;
+            margin: 0px 10px;
+            display: inline-flex;
+        }
+    </style>
+
+
+
+
 </head>
 
 <body>
@@ -76,65 +361,71 @@
 
 
     <!-- Navigation Bar section -->
-    <section class="navbar">
+    <section class="navb" style="background: chocolate;">
 
         <!-- Nav Bar -->
 
         <nav class="navbar navbar-expand-sm" style="background-color:chocolate; height:auto; width: 100%; background-size: cover;">
 
             <button class="navbar-toggler float-xs-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon">
-                  
-                   <i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
-                  
-              </span>
-            </button>
-            
+          <span class="navbar-toggler-icon">
+              
+               <i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
+              
+          </span>
+        </button>
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown" style="background-color:chocolate;">
                 <ul class="navbar-nav mr-auto" style="background-color:chocolate;">
 
-                    <li role="presentation" class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li role="presentation" class="nav-item"><a href="addbusiness.php" class="nav-link">Add Business</a></li>
-                    <li role="presentation" class="nav-item"><a href="team.php" class="nav-link">About Us</a></li>
-                    <li role="presentation" class="nav-item"><a href="faq.php" class="nav-link">Contact Us</a></li>
-        
+                    <li><a class="active" href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="addbusiness.php">Add Business</a></li>
+                    <li><a href="team.php">About Us</a></li>
+                    <li><a href="faq.php">Contact Us</a></li>
+
+
                 </ul>
             </div>
 
-          
+
             <form class="form-inline" method="post">
-                
+
                 <input class="form-control mr-sm-2" type="email" placeholder="Email" name="emailUser" style="width:30%; height:2.0em; font-size:10px;">
                 <input class="form-control mr-sm-2" type="password" placeholder="Password" name="passUser" style="width:20%; height:2.0em; font-size:10px;">
-                <button class="btn btn-sm" name = "logUser" style="width:15%; height:2.0em; background-color:#ffffff; font-size:12px;" type="submit">Login</button>
-           
+                <button class="btn btn-sm" name="logUser" style="width:15%; height:2.0em; background-color:#ffffff; font-size:12px;" type="submit">Login</button>
+
             </form>
-       
-       
-       
+
+
+
         </nav>
-         
+
 
     </section>
 
     <section class="Search">
 
-
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 300px; margin-left: 80px;">
-            <button class="btn btn-secondary" type="search" style="width: 50px; border: none !important; margin-left: 0px !important;"><i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-        </form>
+        <div class="Searchbox">
 
 
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+                <button class="btn btn-secondary" type="search" style="width: 50px; border: none !important; margin-left: 0px !important; background-color: chocolate;"><i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
 
+
+        </div>
+
+
+        <hr>
 
 
     </section>
 
 
     <!-- Introduction Text -->
-    <section class="Intro" style="margin-top: 20px; margin-bottom: 30px;">
+    <!-- <section class="Intro" style="margin-top: 20px; margin-bottom: 30px;">
 
 
         <div class="row">
@@ -145,7 +436,7 @@
         </div>
 
 
-    </section>
+    </section> -->
 
 
     <!-- Section containing side Menu -->
@@ -154,17 +445,113 @@
         <!-- Sidemenu -->
         <div class="side-menu">
 
-            <ul class="sidemenu" style="margin-top: 30px;">
+            <ul class="sidemenu">
 
-                <li style="list-style: none;">Fashion & Beauty</li>
-                <li style="list-style: none;">Phones & Computers
+                <li style="list-style: none;">Fashion & Beauty
+
+                    <ul>
+                        <li>Cosmetics</li>
+                        <li>Salons</li>
+                        <li>Hair Products</li>
+                        <li>Cosmetics</li>
+                        <li>Beauty Therapists</li>
+
+
+                    </ul>
+
                 </li>
+
+                <!-- Phone & tablets -->
+                <li style="list-style: none;">Phones & Tablets
+
+                    <ul>
+                        <li>Htc</li>
+                        <li>Samsung</li>
+                        <li>Iphone</li>
+                        <li>Tecno</li>
+                        <li>Itel</li>
+                        <li>Huawei</li>
+                        <li>Nokia</li>
+                        <li>Infinix</li>
+
+
+                    </ul>
+                </li>
+
+                <!-- Computers list -->
+                <li style="list-style: none;">Computers & Desktops
+
+                    <ul>
+
+
+
+                        <li>Dell</li>
+                        <li>Samsung</li>
+                        <li>Macbooks</li>
+                        <li>Hp</li>
+                        <li>Lenovo</li>
+                        <li>Antivirus</li>
+                        <li>Laptop Bags</li>
+                        <li>Laptop Batteries</li>
+                        <li>Laptop Repair</li>
+                        <li>Asus</li>
+                        <li>Acer</li>
+
+
+                    </ul>
+                </li>
+
+                <!-- Hotel Lists -->
                 <li style="list-style: none;">Hotel & Suits
+                    <ul>
+                        <li>Accomodation</li>
+                        <li>Guest house</li>
+                        <li>Gardens</li>
+                        <li>Conference room</li>
+                        <li>Sweet Food</li>
+
+
+                    </ul>
                 </li>
-                <li style="list-style: none;">Supermarkets</li>
-                <li style="list-style: none;">Health</li>
+
+                <!-- Shopping center Lists -->
+                <li style="list-style: none;">Supermarkets
+
+                    <ul>
+                        <li>Tuskys</li>
+                        <li>Sayen</li>
+                        <li>Magunas</li>
+                        <li>Mathai's</li>
+                        <li>Budget</li>
+
+
+                    </ul>
+
+                </li>
+
+                <!-- Health Lists -->
+                <li style="list-style: none;">Health
+
+                    <ul>
+                        <li>Hospitals
+
+
+
+                        </li>
+                        <li>Chemists
+                        </li>
+                        <li>Dispensaries</li>
+
+                    </ul>
+                </li>
+
+                <!-- Electronics -->
                 <li style="list-style: none;">Electronics</li>
+
+                <!-- Groceries -->
                 <li style="list-style: none;">Groceries</li>
+
+                <!-- Vehicles -->
                 <li style="list-style: none;">Motorcars & Hire</li>
 
             </ul>
@@ -174,7 +561,7 @@
         <!-- Carousel here -->
         <div class=" slider ">
 
-        
+
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -183,13 +570,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://ke.jumia.is/cms/2020/W7/1424_by_768_2-(1).jpg " alt="First slide" style="height: 400px; ">
+                        <img class="d-block w-100" src="https://ke.jumia.is/cms/2020/W7/1424_by_768_2-(1).jpg " style="height: 400px; ">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="https://ke.jumia.is/cms/2020/W7/1424_by_768_-(1).jpg" alt="Second slide" style="height: 400px; ">
+                        <img class="d-block w-100" src="https://ke.jumia.is/cms/2020/W7/1424_by_768_-(1).jpg" style="height: 400px; ">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="https://ke.jumia.is/cms/2020/W7/Valentines_Offer_1424_x_768-(1).jpg " alt="Third slide" style="height: 400px; ">
+                        <img class="d-block w-100" src="https://ke.jumia.is/cms/2020/W7/Valentines_Offer_1424_x_768-(1).jpg " style="height: 400px; ">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -206,45 +593,64 @@
     </section>
 
 
-      <!-- Featured Product to display -->
-      <section class="featuredCategories ">
+    <!-- Featured Product to display -->
+    <section class="featuredCategories ">
 
-    
+
         <div class="container ">
 
             <div class="title">
                 <h2>Coming Soon</h2>
-    
+
             </div>
 
-         
-                <div class=" row " style="margin-bottom: 30px; margin-top: 20px;">
 
-                    <div class="col-md-4 ">
+            <div class=" row " style="margin-bottom: 30px; margin-top: 20px;">
+
+
+                <div class="col-md-4 ">
+
+
+                    <div class="items">
+
                         <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/26/372572/1.jpg?7006 ">
                         <button type="button" class="btn btn-secondary">View Product</button>
                     </div>
-                    <div class="col-md-4 ">
+                </div>
+
+
+
+                <div class="col-md-4 ">
+
+                    <div class="items">
+
                         <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/26/372572/1.jpg?7006 ">
-
                         <button type="button" class="btn btn-secondary">View Product</button>
-
-
                     </div>
+                </div>
 
-                    <div class="col-md-4 ">
+                <div class="col-md-4 ">
+
+                    <div class="items">
+
                         <img src="https://images-na.ssl-images-amazon.com/images/I/71DnIj%2B%2BjUL._SL1500_.jpg ">
                         <button type="button" class="btn btn-secondary">View Product</button>
                     </div>
-
                 </div>
+
+
+
+
+
+
+            </div>
         </div>
 
 
     </section>
 
 
-    
+
     <!-- On Sale Category -->
     <section class="onsale " style="margin-bottom: 80px;">
 
@@ -260,12 +666,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/13/383571/1.jpg?4577 ">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/24/261971/1.jpg?9663">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title="Add Cart " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title="Wishlist " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
                         </div>
 
@@ -276,8 +682,8 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3>Apple MackBook 2019</h3>
-                            <h5>120,000 KSh</h5>
+                            <h6 style="font-weight: bold;">Apple Iphone</h6>
+                            <h5>40,000 KSh</h5>
 
 
 
@@ -300,12 +706,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/816hWq204HL._SL1500_.jpg ">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/86/003462/1.jpg?3144">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title="Add Cart " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title="Wishlist " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
                         </div>
 
@@ -316,8 +722,9 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3>Apple Watch Series 5</h3>
-                            <h5>20,000 KSh</h5>
+
+                            <h6 style="font-weight: bold;">Infinix Smart 3, 5.5", 16GB</h6>
+                            <h5>18,000 KSh</h5>
                         </div>
                     </div>
                 </div>
@@ -326,12 +733,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/41qjwzn4c%2BL.jpg ">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/57/456242/1.jpg?7306 ">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title="Add Cart " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title="Wishlist " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
                         </div>
 
@@ -342,8 +749,9 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3> Apple imac 2015 4K Retina Display </h3>
-                            <h5>90,000 KSh</h5>
+
+                            <h6 style="font-weight: bold;">Water Dispenser </h6>
+                            <h5>3,000 KSh <strike style="color: red; font-size: 16px; margin-left: 10px;">4,0000 kshs</strike></h5>
                         </div>
                     </div>
                 </div>
@@ -353,12 +761,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/25/740322/1.jpg?7825 ">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/05/918741/1.jpg?8905 ">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
                         </div>
 
@@ -369,8 +777,10 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3>Hp core i5 500HDD 4gb Ram</h3>
-                            <h5>40,000 KSh</h5>
+
+                            <h6 style="font-weight: bold;">Apple MacBook Pro
+                            </h6>
+                            <h5>120,000 KSh<strike style="color: red; font-size: 16px; margin-left: 10px;">150,000</strike></h5>
                         </div>
                     </div>
                 </div>
@@ -379,12 +789,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://images-na.ssl-images-amazon.com/images/I/81qiiv09lxL._SL1500_.jpg ">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/73/532942/1.jpg?5227 ">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
                         </div>
 
@@ -395,8 +805,9 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3>Apple Watch 5</h3>
-                            <h5>20,000 KSh</h5>
+
+                            <h6 style="font-weight: bold;">V-Neck Long Sleeved Dress</h6>
+                            <h5>900 KSh<strike style="color: red; font-size: 16px; margin-left: 10px;">1200ksh</strike></h5>
                         </div>
                     </div>
                 </div>
@@ -405,12 +816,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/52/010571/1.jpg?4453 ">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/46/280452/1.jpg?0808 ">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
                         </div>
 
                         <div class="product-rating ">
@@ -420,8 +831,9 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3>New Apple iPad 10.2-Inch 32GB </h3>
-                            <h5>40,000 KSh</h5>
+
+                            <h6 style="font-weight: bold;">Garnier Skin Care Essentials</h6>
+                            <h5>1680 KSh<strike style="color: red; font-size: 16px; margin-left: 10px;">2000ksh</strike></h5>
                         </div>
                     </div>
                 </div>
@@ -431,12 +843,12 @@
 
                     <div class="topproducts ">
 
-                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/23/939822/1.jpg?9866">
+                        <img src="https://ke.jumia.is/unsafe/fit-in/680x680/filters:fill(white)/product/38/589852/1.jpg?1890">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
 
 
@@ -449,8 +861,9 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3> Samsung A10s 3GB RAM 32GB ROM </h3>
-                            <h5>32,000 KSh</h5>
+
+                            <h6 style="font-weight: bold;">Weetabix Chocolate 82% Whole Grain Biscuit</h6>
+                            <h5>430 KSh</h5>
                         </div>
                     </div>
                 </div>
@@ -463,9 +876,9 @@
                         <img src="https://images-na.ssl-images-amazon.com/images/I/51vb%2BcxGzQL._SL1000_.jpg ">
                         <div class="overlayright ">
 
-                            <a class="btn btn-secondary " title=" View Shop " href="details.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Add Cart " href="details.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
-                            <a class="btn btn-secondary " title="Wishlist " href="details.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
 
                         </div>
 
@@ -476,7 +889,8 @@
                             <i class="fa fa-star " aria-hidden="true "></i>
                             <i class="fa fa-star-half-o " aria-hidden="true "></i>
 
-                            <h3> Beats Solo3 Wireless </h3>
+
+                            <h6 style="font-weight: bold;">Beats Solo3 Wireless </h6>
                             <h5>20,000 KSh</h5>
                         </div>
                     </div>
@@ -495,8 +909,247 @@
     </section>
 
 
+    <!-- Farm Products Category -->
+    <section class="onsale " style="margin-bottom: 80px;">
+
+        <div class="container ">
+            <div class="title1 ">
+                <h2>Farm Equipment</h2>
+            </div>
+
+            <div class="row ">
+
+                <!-- Item 1 -->
+                <div class="col-md-3 ">
+
+                    <div class="topproducts ">
+
+                        <img src="https://copia.co.ke/wp-content/uploads/2019/12/KL103_166-510x510.jpg">
+                        <div class="overlayright ">
+
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+
+                        </div>
+
+                        <div class="product-rating ">
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star-half-o " aria-hidden="true "></i>
+
+                            <h6 style="font-weight: bold;">chaff Cutter</h6>
+                            <h5>40,000 KSh</h5>
+
+
+
+
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- item2 -->
+                <div class="col-md-3 ">
+
+                    <div class="topproducts ">
+
+                        <img src="https://copia.co.ke/wp-content/uploads/2019/05/Fence-your-Homstead_Hampers_4905_1-2-510x510.jpeg">
+                        <div class="overlayright ">
+
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+
+                        </div>
+
+                        <div class="product-rating ">
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star-half-o " aria-hidden="true "></i>
+
+
+                            <h6 style="font-weight: bold;">Wiremesh Fence</h6>
+                            <h5>8,000 KSh <strike style="color: red; font-size: 16px; margin-left: 10px;">10,0000 kshs</strike></h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- item 3 -->
+                <div class="col-md-3 ">
+
+                    <div class="topproducts ">
+
+                        <img src="https://copia.co.ke/wp-content/uploads/2019/05/Husqvarna-Power-saw-_Tools_4922_1-510x510.jpeg ">
+                        <div class="overlayright ">
+
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+
+                        </div>
+
+                        <div class="product-rating ">
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star-half-o " aria-hidden="true "></i>
+
+
+                            <h6 style="font-weight: bold;">Husqvarna 372 Chain Saw </h6>
+                            <h5>84,000 KSh <strike style="color: red; font-size: 16px; margin-left: 10px;">90,0000 kshs</strike></h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- item 4 -->
+                <div class="col-md-3 ">
+
+                    <div class="topproducts ">
+
+                        <img style="height: 250px;" src="https://copia.co.ke/wp-content/uploads/2020/02/Fugo-Layer-Mash-5kg_Feeds_9368_1.jpeg ">
+                        <div class="overlayright ">
+
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-eye " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-shopping-cart " aria-hidden="true "></i></a>
+                            <a class="btn btn-secondary " title=" View Shop " href="DetailsPage.html"><i class="fa fa-heart-o " aria-hidden="true "></i></a>
+
+                        </div>
+
+                        <div class="product-rating ">
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star " aria-hidden="true "></i>
+                            <i class="fa fa-star-half-o " aria-hidden="true "></i>
+
+
+                            <h6 style="font-weight: bold;">Chicken feed
+                            </h6>
+                            <h5>300 KSh<strike style="color: red; font-size: 16px; margin-left: 10px;">500 ksh</strike></h5>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+
     <!-- This Here hosts our foooter -->
-  
+    <section style="background-color: chocolate;" class="Bottom">
+
+        <section style="background-color:chocolate;  " class="foottom ">
+
+            <div class="footerr ">
+
+                <div class="row ">
+
+                    <!-- A brief Description of the web -->
+                    <div class="col-md-3 ">
+
+                        <h3 style="font-weight: bold; font-size: 20px; margin-left: 60px; color: white; margin-top: 20px; ">About Meru Market Online</h3>
+
+                        <p style="color: white; margin-left: 60px; margin-top: 20px; margin-bottom: 30px; text-align: center; ">Meru Market Online was established in 2014. <br> It was created to make Trade easy.</p>
+
+
+                    </div>
+
+                    <!-- shortcut links  -->
+                    <div class="col-md-3 ">
+
+                        <h3 style="font-weight: bold; font-size: 20px; margin-left: 60px; color: white; margin-top: 20px; ">Explore links</h3>
+                        <li style="color: white; margin-left: 60px; margin-top: 20px; list-style: none;cursor: pointer; ">Home</li>
+                        <li style="color: white; margin-left: 60px; list-style: none; cursor: pointer; ">About</li>
+                        <li style="color: white; margin-left: 60px;list-style: none; cursor: pointer;">Contact</li>
+                        <li style="color: white; margin-left: 60px;list-style: none; cursor: pointer; cursor: pointer; ">Faqs</li>
+                        <li style="color: white; margin-left: 60px; margin-bottom: 30px; list-style: none; margin-bottom: 30px; cursor: pointer; ">Terms & Conditions</li>
+
+
+                    </div>
+
+
+                    <!-- Social,Media  -->
+                    <div class="col-md-3 ">
+
+                        <h3 style="font-weight: bold; font-size: 20px; margin-left: 30px; color: white; margin-top: 20px; ">Follow Us</h3>
+
+                        <p style="color: white; margin-left: 30px; margin-top: 20px; list-style: none; cursor: pointer; "><b><i class="fa fa-instagram " style="margin-right: 5px; "></i></b>instagram</p>
+                        <p style="color: white; margin-left: 30px; margin-top: 10px; list-style: none; cursor: pointer; "><b><i class="fa fa-twitter "style="margin-right: 5px; "></i></b>twitter</p>
+                        <p style="color: white; margin-left: 30px; margin-top: 10px; list-style: none; margin-bottom: 30px; cursor: pointer; "><b><i class="fa fa-facebook " style="margin-right: 5px; "></i></b>Facebook</p>
+
+
+
+                    </div>
+
+                    <!-- Our contacts  -->
+                    <div class="col-md-3 ">
+
+                        <h1 style="font-weight: bold; font-size: 20px; margin-left: 30px; color: white; margin-top: 20px; text-decoration: none; ">Contacts</h1>
+
+                        <p style="color: white; margin-left: 30px; margin-top: 20px; list-style: none; cursor: pointer; "><b><i class="fa fa-phone " style="margin-right: 10px; "></i></b>+254 716 192 803 / +254 716 192 803</p>
+                        <p style="color: white; margin-left: 30px; margin-top: 20px; list-style: none; margin-bottom: 30px; cursor:pointer; "><b><i class="fa fa-envelope " style="margin-right: 10px; "></i></b>info@merumarket.com</p>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </section>
+
+        <div class="courtesy">
+
+            <hr>
+            <P style="text-align: center; color: white; margin-bottom: 30px; ">(c) 2020 Meru Online Market </P>
+
+
+        </div>
+
+    </section>
+
+
+
 
 
 
